@@ -4,20 +4,17 @@ from get_database import get_database
 db = get_database()
 
 # Create collection for users
-collection = db["users"]
+users_collection = db["users"]
 
-user_1 = {
-    "_id": "IBEAU00001",
-    "username": "admin",
-    "password": "admin2023",
-    "email": "admin@email.com"
-}
+# Insert new user to the collection
+# Get username, password, and email from request
+def insert_new_user(username, password, email):
+    users_collection.insert_one({
+        "username": username,
+        "password": password,
+        "email": email
+    })
 
-user_2 = {
-    "_id": "IBEAU00002",
-    "username": "alecat0305",
-    "password": "IBEA2023",
-    "email": "alexis.cathcart0305@gmail.com"
-}
-
-collection.insert_many([user_1, user_2])
+# Dummy users
+insert_new_user("admin", "admin2023", "admin@gmail.com")
+insert_new_user("alecat0305", "IBEA2023", "alexis.cathcart0305@gmail.com")

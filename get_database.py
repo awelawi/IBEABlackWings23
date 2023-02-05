@@ -12,5 +12,3 @@ def get_database():
 
 if __name__ == "__main__":
     db = get_database()
-
-# API key (remove later): KFsjMFgrzublYYoSArwur561LNkXrHjnQp5781ciVy3FvsLtlFXZpvcVXH6Kq8DE
